@@ -12,6 +12,7 @@ import Proyectos from '../src/paginas/Proyectos'
 import NuevoProyecto from '../src/paginas/NuevoProyecto'
 import Proyecto from '../src/paginas/Proyecto'
 import EditarProyecto from '../src/paginas/EditarProyecto'
+import NuevoColaborador from '../src/paginas/NuevoColaborador'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/proyectos" element={<RutaProtegida />}>
                 <Route index element={<Proyectos />} />
                 <Route path="crear-proyecto" element={<NuevoProyecto />} />
+                <Route path="nuevo-colaborador/:id" element={<NuevoColaborador />} />
                 <Route path=":id" element={<Proyecto />} />
                 <Route path="editar/:id" element={<EditarProyecto />} />
               </Route>

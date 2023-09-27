@@ -3,7 +3,7 @@ import useProyectos from '../hooks/useProyectos'
 
 const Tarea = ({ tarea }) => {
 
-  const { hadleModalEditarTarea } = useProyectos()
+  const { handleModalEditarTarea , handleModalEliminarTarea} = useProyectos()
 
   const { nombre, estado, prioridad, description, fechaEntrega, _id } = tarea
   return (
@@ -16,7 +16,7 @@ const Tarea = ({ tarea }) => {
       </div>
       <div className="flex gap-2" >
         <button
-          onClick={() => hadleModalEditarTarea(tarea)}
+          onClick={() => handleModalEditarTarea(tarea)}
           className="bg-indigo-600 px-4 py-3 text-white uppercase font-bold text-sm rounded-lg"
         >
           Editar
@@ -37,6 +37,7 @@ const Tarea = ({ tarea }) => {
 
         <button
           className="bg-red-600 px-4 py-3 text-white uppercase font-bold text-sm rounded-lg"
+          onClick={() => handleModalEliminarTarea(tarea)}
         >
           Eliminar
         </button>
